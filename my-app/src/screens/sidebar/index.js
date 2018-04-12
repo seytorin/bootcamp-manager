@@ -28,6 +28,7 @@ const datas = [
     icon: "easel",
     bg: "#C5F442"
   },
+  // Combine lower object with client mgr
   {
     name: "Header",
     route: "Header",
@@ -63,7 +64,7 @@ const datas = [
     types: "5"
   },
   {
-    name: "Check Box",
+    name: "Client Manager",
     route: "NHCheckbox",
     icon: "checkmark-circle",
     bg: "#EB6B23"

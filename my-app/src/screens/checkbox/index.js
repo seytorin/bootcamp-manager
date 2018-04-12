@@ -58,7 +58,7 @@ class NHCheckbox extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Check Box</Title>
+            <Title>Client Manage</Title>
           </Body>
           <Right />
         </Header>
@@ -70,7 +70,7 @@ class NHCheckbox extends Component {
               onPress={() => this.toggleSwitch1()}
             />
             <Body>
-              <Text>Lunch Break</Text>
+              <Text>Kim Karcashingin</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch2()}>
@@ -80,7 +80,7 @@ class NHCheckbox extends Component {
               onPress={() => this.toggleSwitch2()}
             />
             <Body>
-              <Text>Daily Stand Up</Text>
+              <Text>Dwayne the "Jock"</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch3()}>
@@ -90,7 +90,7 @@ class NHCheckbox extends Component {
               onPress={() => this.toggleSwitch3()}
             />
             <Body>
-              <Text>Finish list Screen</Text>
+              <Text>Arnold Quartzinator</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch4()}>
@@ -100,7 +100,7 @@ class NHCheckbox extends Component {
               onPress={() => this.toggleSwitch4()}
             />
             <Body>
-              <Text>Discussion with Client</Text>
+              <Text>Taylor Fast</Text>
             </Body>
           </ListItem>
         </Content>
