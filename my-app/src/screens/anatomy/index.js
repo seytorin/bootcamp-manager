@@ -27,14 +27,40 @@ class Anatomy extends Component {
     latitudeDelta: 0.0922,
     //Renders longitudeDelta dynamically based on device location
     longitudeDelta: 0.0421
-    }
+    },
+    //This is for the placing a marker
+    locationChosen: false
   }
 
   //Event handler for onPress with maps
   pickLocationHandler = event => {
-
+    const coords = event.nativeEvent.coordinate;
+    //Javascript object for map animate
+    this.map.animateToRegion({
+      ...this.state.locationSpot,
+      latitude: coords.latitude,
+      longitude: coords.longitude
+    });
+    this.setState(prevState => {
+      return{
+        locationSpot: {
+        //Copies previous state
+          ...prevState.locationSpot,
+          latitude: coords.latitude,
+          longitude: coords.longitude
+        },
+        //Changes state of marker placement chosen to true
+        locationChosen: true
+      };
+    });
   }
+
   render() {
+    let marker = null;
+    //if locationChosen is true
+    if (this.state.locationChosen){
+      marker = <MapView.Marker coordinate={this.state.locationSpot}/>;
+    }
     return (
       <Container style={styles.container}>
         <Header>
@@ -55,9 +81,14 @@ class Anatomy extends Component {
         <Content padder>
         <MapView
    initialRegion={this.state.locationSpot}
-    style = {styles.maps}
-    // onPress={}
-  />
+ 
+       style = {styles.maps}
+    onPress={this.pickLocationHandler}
+    //ref creates a reference to the mapview opject
+    ref={ref => this.map = ref}
+  >
+    {marker}
+  </MapView>
           {/* <Text>Content goes</Text> */}
         </Content>
 
