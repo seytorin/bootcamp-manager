@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MapView from "react-native-maps";
+// import Dimensions from "react-native";
 import {
   Container,
   Header,
@@ -18,6 +19,21 @@ import {
 import styles from "./styles";
 
 class Anatomy extends Component {
+//State of maps
+  state = {
+    locationSpot:{
+    latitude: 37.78825,
+    longitude: -122.4324,
+    latitudeDelta: 0.0922,
+    //Renders longitudeDelta dynamically based on device location
+    longitudeDelta: 0.0421
+    }
+  }
+
+  //Event handler for onPress with maps
+  pickLocationHandler = event => {
+
+  }
   render() {
     return (
       <Container style={styles.container}>
@@ -38,13 +54,9 @@ class Anatomy extends Component {
 
         <Content padder>
         <MapView
-    initialRegion={{
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    }}
+   initialRegion={this.state.locationSpot}
     style = {styles.maps}
+    // onPress={}
   />
           {/* <Text>Content goes</Text> */}
         </Content>
