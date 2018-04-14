@@ -3,8 +3,9 @@ export default {
     backgroundColor: "#fff"
   },
   maps: {
-    width: 400,
-    height: 400
+    width: 412,
+    height: 549,
+    padding:0
 
   }
 };

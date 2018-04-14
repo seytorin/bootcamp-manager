@@ -13,7 +13,8 @@ import {
   FooterTab,
   Left,
   Right,
-  Body
+  Body,
+  View
 } from "native-base";
 
 import styles from "./styles";
@@ -55,6 +56,26 @@ class Anatomy extends Component {
     });
   }
 
+  sendLocationHandler = () => {
+    navigator.geolocation.getCurrentPosition(pos => {
+      //Reuse pickLocationHandler
+      const coordsEvent = {
+        nativeEvent: {
+          coordinate:{
+            latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude
+          }
+        }
+      };
+      this.pickLocationHandler(coordsEvent);
+    },
+    err => {
+      console.log(err);
+      alert("Position locator failed. Please restart application");
+    });
+    }
+  
+
   render() {
     let marker = null;
     //if locationChosen is true
@@ -87,6 +108,8 @@ class Anatomy extends Component {
     //ref creates a reference to the mapview opject
     ref={ref => this.map = ref}
   >
+  
+    
     {marker}
   </MapView>
           {/* <Text>Content goes</Text> */}
@@ -94,8 +117,8 @@ class Anatomy extends Component {
 
         <Footer>
           <FooterTab>
-            <Button active full>
-              <Text>Footer</Text>
+            <Button active full onPress={this.sendLocationHandler}>
+              <Text> Send Workout Location</Text>
             </Button>
           </FooterTab>
         </Footer>
