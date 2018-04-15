@@ -14,7 +14,9 @@ import {
   Left,
   Right,
   Body,
-  View
+  View,
+  IconNB,
+  Textarea
 } from "native-base";
 
 import styles from "./styles";
@@ -28,6 +30,10 @@ class Anatomy extends Component {
     latitudeDelta: 0.0922,
     //Renders longitudeDelta dynamically based on device location
     longitudeDelta: 0.0421
+    },
+    location: {
+      value: null,
+      valid: false
     },
     //This is for the placing a marker
     locationChosen: false
@@ -112,6 +118,21 @@ class Anatomy extends Component {
     
     {marker}
   </MapView>
+  <Header>
+    <Left>
+      {/* <Button>
+          <IconNB />
+      </Button> */}
+    </Left>
+    <Body>
+      <Title>TextArea</Title>
+    </Body>
+    <Right />
+  </Header>
+
+        <Content padder>
+          <Textarea rowSpan={5} bordered placeholder="Textarea" />
+        </Content>
           {/* <Text>Content goes</Text> */}
         </Content>
 

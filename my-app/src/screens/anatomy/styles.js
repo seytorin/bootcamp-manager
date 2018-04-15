@@ -4,7 +4,7 @@ export default {
   },
   maps: {
     width: 412,
-    height: 549,
+    height: 300,
     padding:0
 
   }
