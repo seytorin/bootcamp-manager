@@ -16,10 +16,14 @@ import {
   Body,
   View,
   IconNB,
-  Textarea
+  Textarea,
+  ActionSheet,
 } from "native-base";
 
 import styles from "./styles";
+var BUTTONS = ["Jazmin Garcia", "Tim Robbins", "Kim Dennings", "Kat Richards"];
+var DESTRUCTIVE_INDEX = 3;
+var CANCEL_INDEX = 4;
 
 class Anatomy extends Component {
 //State of maps
@@ -138,7 +142,18 @@ class Anatomy extends Component {
 
         <Footer>
           <FooterTab>
-            <Button active full onPress={this.sendLocationHandler}>
+            <Button active full onPress={this.sendLocationHandler} onPress={() =>
+              ActionSheet.show(
+                {
+                  options: BUTTONS,
+                  cancelButtonIndex: CANCEL_INDEX,
+                  destructiveButtonIndex: DESTRUCTIVE_INDEX,
+                  title: "Select an option"
+                },
+                buttonIndex => {
+                  this.setState({ clicked: BUTTONS[buttonIndex] });
+                }
+              )}>
               <Text> Send Workout Location</Text>
             </Button>
           </FooterTab>
