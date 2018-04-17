@@ -74,7 +74,9 @@ import AdvSegment from "./screens/segment/segmentTab";
 import SimpleDeck from "./screens/deckswiper/simple";
 import AdvancedDeck from "./screens/deckswiper/advanced";
 
+
 import Home from "./screens/home/";
+import Signin from "./screens/home/signin";
 import Anatomy from "./screens/anatomy/";
 import Footer from "./screens/footer/";
 import NHBadge from "./screens/badge/";
@@ -106,6 +108,7 @@ import Actionsheet from "./screens/actionsheet";
 
 const Drawer = DrawerNavigator(
   {
+    Signin: {screen: Signin},
     Home: { screen: Home },
     Anatomy: { screen: Anatomy },
     Header: { screen: Header },
@@ -136,7 +139,7 @@ const Drawer = DrawerNavigator(
     Actionsheet: { screen: Actionsheet }
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Signin",
     contentOptions: {
       activeTintColor: "#e91e63"
     },

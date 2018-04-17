@@ -15,8 +15,8 @@ export default {
   },
   logo: {
     position: "absolute",
-    left: Platform.OS === "android" ? 40 : 50,
-    top: Platform.OS === "android" ? 35 : 60,
+    left: Platform.OS === "android" ? 60 : 40,
+    top: Platform.OS === "android" ? 60 : 40,
     width: 280,
     height: 100
   },
@@ -26,5 +26,9 @@ export default {
     fontWeight:"bold",
     bottom: 6,
     marginTop: 5
+  },
+  signin: {
+    position: 'relative',
+    top:100
   }
 };
