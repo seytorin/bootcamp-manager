@@ -12,6 +12,7 @@ import {
   Right,
   Body
 } from "native-base";
+// import firebase from 'react-native-firebase';
 import styles from "./styles";
 
 class NHBadge extends Component {
