@@ -94,8 +94,8 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 26
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.fitbywilson.bootcampmanager"
@@ -137,11 +137,12 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.firebase:firebase-core:15.0.0'
     // implementation project(':react-native-google-signin')
     implementation project(':react-native-vector-icons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.android.support:appcompat-v7:23.0.1"
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.android.support:appcompat-v7:26.1.0"
+    implementation "com.facebook.react:react-native:"  // From node_modules
     //newly added
     // implementation 'com.google.firebase:firebase-core:12.0.1'
     
@@ -154,8 +155,8 @@ dependencies {
       exclude group: 'com.google.android.gms', module: 'play-services-base'
       exclude group: 'com.google.android.gms', module: 'play-services-maps'
     }
-    implementation 'com.google.android.gms:play-services-base:11.8.0'
-    implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    implementation 'com.google.android.gms:play-services-base:15.0.0'
+    implementation 'com.google.android.gms:play-services-maps:15.0.0'
     //newly added
     // implementation 'com.google.android.gms:play-services-auth:11.8.0'
     // apply plugin: 'com.google.gms.google-services' 
@@ -167,3 +168,6 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+ 
+apply plugin: 'com.google.gms.google-services'
+
