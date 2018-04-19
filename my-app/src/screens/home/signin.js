@@ -1,5 +1,5 @@
+
 import React, { Component } from "react";
-import { ImageBackground, View, StatusBar, StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -26,23 +26,18 @@ class Signin extends Component {
 
     render() {
         return (
-          <Container>
-          <StatusBar barStyle="light-content" />
-          <ImageBackground source={launchscreenBg} style={styles.imageContainer}>
-            <View style={styles.logoContainer}>
-              <ImageBackground source={launchscreenLogo} style={styles.logo} />
-            </View>
-            <View
-              style={{
-                alignItems: "center",
-                marginBottom: 50,
-                backgroundColor: "transparent"
-              }}
-            >
-              
-              <View style={{ marginTop: 8 }} />
-              <View >
-               <Content style={styles.signin}>
+          <Container style={styles.container}>
+            <Header>
+              <Left>
+               
+              </Left>
+              <Body>
+                <Title>Sign in</Title>
+              </Body>
+              <Right />
+            </Header>
+    
+            <Content>
           <Form>
             <Item floatingLabel>
               <Label>Username</Label>
@@ -57,16 +52,7 @@ class Signin extends Component {
             <Text>Sign In</Text>
           </Button>
         </Content>
-               </View>
-              <View />
-            </View>
-            <View style={{ marginBottom: 80 }}>
-            
-            </View>
-          </ImageBackground>
-        </Container>
-
-     
+      </Container>
         );
       }
 
