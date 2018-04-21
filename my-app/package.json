@@ -35,12 +35,11 @@
     "native-base": "^2.3.10",
     "react": "16.2.0",
     "react-native": "^0.54.4",
-    "react-native-firebase": "^4.0.4",
     "react-native-geocoding": "^0.3.0",
     "react-native-google-signin": "^0.12.0",
     "react-native-maps": "^0.21.0",
+    "react-native-sms": "^1.5.2",
     "react-native-vector-icons": "4.3.0",
-    "react-navigation": "1.5.0",
-    "realm": "^2.2.20"
+    "react-navigation": "1.5.0"
   }
 }
