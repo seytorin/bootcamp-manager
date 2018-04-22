@@ -1,4 +1,6 @@
 package com.fitbywilson.bootcampmanager;
+
+import com.tkporter.sendsms.SendSMSPackage;
 //newly added
 // import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import android.app.Application;
@@ -29,7 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             // new RNGoogleSigninPackage(),
           new VectorIconsPackage(),
-          new MapsPackage()
+          new MapsPackage(),
+          SendSMSPackage.getInstance()
       );
     }
 

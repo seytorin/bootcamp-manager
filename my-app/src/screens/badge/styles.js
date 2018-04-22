@@ -8,5 +8,10 @@ export default {
   },
   mb: {
     marginBottom: 10
-  }
+  },
+  flatListItem: {
+    color: 'white',
+    padding: 10,
+    fontSize: 16,  
+}
 };
