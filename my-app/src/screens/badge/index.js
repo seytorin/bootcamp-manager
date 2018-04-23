@@ -16,7 +16,8 @@ import {
 } from "native-base";
 import Swipeout from 'react-native-swipeout';
 import flatListData from './flatListData';
-import Anatomy from '../anatomy/index';
+// import Anatomy from '../anatomy/index';
+import AddModal from './AddModal';
 import styles from "./styles";
 
 var screen = Dimensions.get('window');
@@ -140,7 +141,7 @@ class FlatListItem extends Component {
                         >
                     <Image
                         style={{width: 35, height: 35}}
-                        
+                        source={require('./icons-add.png')}
                     />
                 </TouchableHighlight>
                 </View>
@@ -157,9 +158,9 @@ class FlatListItem extends Component {
                     >
     
                 </FlatList>
-                <Anatomy ref={'addModal'} parentFlatList={this} >
+                <AddModal ref={'addModal'} parentFlatList={this} >
     
-                </Anatomy>
+                </AddModal>
             </View>
           );
         }
