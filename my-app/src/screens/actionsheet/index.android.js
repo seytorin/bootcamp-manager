@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import {
+  View,
+  Dimensions,
+} from 'react-native';
+import {
   Container,
   Header,
   Title,
@@ -13,19 +17,43 @@ import {
   List,
   ListItem
 } from "native-base";
+import AnimatedBar from './AnimatedBar';
 
-const datas = [
-  {
-    route: "RegularActionSheet",
-    text: "Regular"
-  },
-  {
-    route: "IconActionSheet",
-    text: "Icon ActionSheet"
-  }
-];
+const window = Dimensions.get('window');
+const DELAY = 100;
 
 class NHPicker extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: [],
+    };
+  }
+
+  componentDidMount() {
+    this.generateData();
+    this.interval = setInterval(() => {
+      this.generateData();
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  generateData = () => {
+    const data = [];
+    for (let i = 0; i < 2; i++) {
+      data.push(Math.floor(Math.random() * window.width));
+      
+    }
+
+    this.setState({
+      data,
+    });
+  }
   render() {
     return (
       <Container style={{ backgroundColor: "#fff" }}>
@@ -39,29 +67,20 @@ class NHPicker extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>ActionSheet</Title>
+            <Title>Financial Chart</Title>
           </Body>
           <Right />
         </Header>
 
         <Content>
-          <List
-            dataArray={datas}
-            renderRow={data =>
-              <ListItem
-                button
-                onPress={() => this.props.navigation.navigate(data.route)}
-              >
-                <Left>
-                  <Text>
-                    {data.text}
-                  </Text>
-                </Left>
-                <Right>
-                  <Icon name="arrow-forward" style={{ color: "#999" }} />
-                </Right>
-              </ListItem>}
-          />
+         
+        <View style={{ flex: 1, backgroundColor: '#F5FCFF', justifyContent: 'center'}}>
+          <View>
+            {this.state.data.map((value, index) => <AnimatedBar value={value} delay={DELAY * index} key={index} />)}
+          </View>
+        </View>
+
+
         </Content>
       </Container>
     );

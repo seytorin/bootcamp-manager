@@ -34,6 +34,7 @@
     "moment": "2.13.0",
     "native-base": "^2.3.10",
     "random-string": "^0.2.0",
+    "randomcolor": "^0.5.3",
     "react": "16.2.0",
     "react-native": "^0.54.4",
     "react-native-button": "^2.3.0",

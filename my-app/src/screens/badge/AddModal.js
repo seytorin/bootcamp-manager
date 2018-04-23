@@ -57,7 +57,7 @@ export default class AddModal extends Component {
                         borderBottomWidth: 1
                     }}           
                     onChangeText={(text) => this.setState({ newFoodName: text })}
-                    placeholder="Enter new food's name"
+                    placeholder="Enter your clients name"
                     value={this.state.newFoodName}                 
                 />
                 <TextInput
@@ -72,7 +72,7 @@ export default class AddModal extends Component {
                     }}
                     
                     onChangeText={(text) => this.setState({ newFoodDescription: text })}
-                    placeholder="Enter new food's description"
+                    placeholder="Enter Amount Due"
                     value={this.state.newFoodDescription}
                 />
                 <Button
@@ -87,15 +87,15 @@ export default class AddModal extends Component {
                     }}
                     onPress={() => {
                          if (this.state.newFoodName.length == 0 || this.state.newFoodDescription.length == 0) {
-                            alert("You must enter food's name and description");
+                            alert("You must enter a clients name and amount due.");
                             return;
                         }       
                         const newKey = this.generateKey(24);
                         const newFood = {
                             key: newKey,
                             name: this.state.newFoodName,
-                            imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/64/Foods_%28cropped%29.jpg",
-                            foodDescription: this.state.newFoodDescription
+                            imageUrl: "https://asset2.modelmanagement.com/mm-eyJ0Ijp7InIiOnsibCI6/IjMzMCIsImgiOiIzMDAi/fX0sImlkIjoiaTM5MDYy/MjIiLCJmIjoianBnIn0;.jpg",
+                            foodDescription:"Due:$" + this.state.newFoodDescription
                         };    
                         flatListData.push(newFood);    
                         this.props.parentFlatList.refreshFlatList(newKey);                                

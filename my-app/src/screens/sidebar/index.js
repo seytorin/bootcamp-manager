@@ -23,7 +23,7 @@ const datas = [
     bg: "#C5F442"
   },
   {
-    name: "Actionsheet",
+    name: "Financial Chart",
     route: "Actionsheet",
     icon: "easel",
     bg: "#C5F442"
@@ -44,7 +44,7 @@ const datas = [
     types: "4"
   },
   {
-    name: "Badge",
+    name: "Manage Clients",
     route: "NHBadge",
     icon: "notifications",
     bg: "#4DCAE0"

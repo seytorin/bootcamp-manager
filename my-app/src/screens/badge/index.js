@@ -93,7 +93,7 @@ class FlatListItem extends Component {
                         </View>
                         <View style={{
                             height: 1,
-                            backgroundColor:'white'                            
+                            backgroundColor:'#F5FCFF'                            
                         }}>
                     
                         </View>
@@ -129,11 +129,28 @@ class FlatListItem extends Component {
           return (
             <View style={{flex: 1, marginTop: Platform.OS === 'ios' ? 34 : 0}}>
                 <View style={{
-                    backgroundColor: '#FC4A1A', 
+                    backgroundColor: '#3551B5', 
                     flexDirection: 'row',
                     justifyContent:'flex-end',                
                     alignItems: 'center',
                     height: 64}}>
+
+                     
+          <Left>
+            <Button
+            transparent
+            onPress={() => this.props.navigation.navigate("DrawerOpen")}
+            >
+              <Icon style={{
+                  color:'white'
+              }} name="ios-menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Header</Title>
+          </Body>
+          <Right />
+        
                     <TouchableHighlight 
                         style={{marginRight: 10}}
                         underlayColor='tomato'
