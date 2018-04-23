@@ -74,7 +74,7 @@ class FlatListItem extends Component {
                                 flex: 1,
                                 flexDirection:'row',
                                 // backgroundColor: this.props.index % 2 == 0 ? 'mediumseagreen': 'tomato'                
-                                backgroundColor: 'mediumseagreen'
+                                backgroundColor: '#4ABDAC'
                         }}>            
                             <Image 
                                 source={{uri: this.props.item.imageUrl}}
@@ -129,7 +129,7 @@ class FlatListItem extends Component {
           return (
             <View style={{flex: 1, marginTop: Platform.OS === 'ios' ? 34 : 0}}>
                 <View style={{
-                    backgroundColor: 'tomato', 
+                    backgroundColor: '#FC4A1A', 
                     flexDirection: 'row',
                     justifyContent:'flex-end',                
                     alignItems: 'center',
